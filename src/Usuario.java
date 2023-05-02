@@ -5,17 +5,17 @@ public class Usuario {
     private String codigo;
     private String nome;
     private String senha;
-    private int tentativasacesso;
-    private boolean primeiroacesso;
-    private LocalDate datainativacao;
-    private  String status;
+    private int tentativasAcesso;
+    private boolean primeiroAcesso;
+    private LocalDate dataInativacao;
+    private String status;
+    private String usuario;
 
     public Usuario() {
         this.senha = "etec#123";
-        this.primeiroacesso = true;
-        this.status = "ATIVO";
+        this.primeiroAcesso = true;
+        this.status = "INATIVO";
     }
-
 
     public String getCodigo() {
         return codigo;
@@ -41,28 +41,28 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public int getTentativasacesso() {
-        return tentativasacesso;
+    public int getTentativasAcesso() {
+        return tentativasAcesso;
     }
 
-    public void setTentativasacesso(int tentativasacesso) {
-        this.tentativasacesso = tentativasacesso;
+    public void setTentativasAcesso(int tentativasAcesso) {
+        this.tentativasAcesso = tentativasAcesso;
     }
 
-    public boolean isPrimeiroacesso() {
-        return primeiroacesso;
+    public boolean isPrimeiroAcesso() {
+        return primeiroAcesso;
     }
 
-    public void setPrimeiroacesso(boolean primeiroacesso) {
-        this.primeiroacesso = primeiroacesso;
+    public void setPrimeiroAcesso(boolean primeiroAcesso) {
+        this.primeiroAcesso = primeiroAcesso;
     }
 
-    public LocalDate getDatainativacao() {
-        return datainativacao;
+    public LocalDate getDataInativacao() {
+        return dataInativacao;
     }
 
-    public void setDatainativacao(LocalDate datainativacao) {
-        this.datainativacao = datainativacao;
+    public void setDataInativacao(LocalDate dataInativacao) {
+        this.dataInativacao = dataInativacao;
     }
 
     public String getStatus() {
@@ -73,9 +73,25 @@ public class Usuario {
         this.status = status;
     }
 
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    void exibirDados(){
+        System.out.println("Codigo: " + codigo);
+        System.out.println("Usuario: " + usuario);
+        System.out.println("Senha: " + senha);
+        System.out.println("Trocar senha: " + primeiroAcesso);
+        System.out.println("Status: " + status);
+    }
+
         boolean inativacaoUsuario(){
             LocalDate.now();
-            if(primeiroacesso == true)
+            if(primeiroAcesso == true)
                 return false;
             else
                 return true;
